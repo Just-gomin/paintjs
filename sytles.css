@@ -1,0 +1,90 @@
+@import "./reset.css";
+
+body {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #7f8c8d;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas {
+  height: 600px;
+  width: 600px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.51), 0 1px 3px rgba(0, 0, 0, 0.58);
+}
+
+.controls {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls .controls__brushSize {
+  margin-bottom: 20px;
+}
+
+.contols__brushSize #jsBrushSize {
+}
+
+.controls .controls__btns {
+  margin-bottom: 20px;
+}
+
+.controls__btns button {
+  all: unset;
+  width: 60px;
+  padding: 5px;
+  margin: 0 5px 0 5px;
+  background-color: #e5e3e8;
+  border: 3px solid #53525c;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #53525c;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+
+.controls__btns button:hover {
+  background-color: #53525c;
+  color: white;
+}
+
+.controls__btns button:active {
+  transform: scale(0.95);
+}
+
+.controls .controls__colors {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #e5e3e8;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.51), 0 1px 3px rgba(0, 0, 0, 0.58);
+}
+
+.controls__colors .controls__color {
+  width: 50px;
+  height: 50px;
+  margin: 0px 5px 0px 5px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.51), 0 1px 3px rgba(0, 0, 0, 0.58);
+  cursor: pointer;
+}
+
+.controls__colors .controls__color:hover {
+  transform: scale(1.15);
+}
+
+.controls__colors .controls__color:active {
+  transform: scale(0.95);
+}
