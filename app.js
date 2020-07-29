@@ -5,8 +5,9 @@ const ctx = canvas.getContext("2d");
 const brushSizeInput = document.getElementById("jsBrushSize");
 const brushSizeText = document.getElementById("jsBrushSizeText");
 
-const mode = document.getElementById("jsMode");
-const save = document.getElementById("jsSave");
+const modeBtn = document.getElementById("jsMode");
+const initializeBtn = document.getElementById("jsInitialize");
+const saveBtn = document.getElementById("jsSave");
 
 const colors = document.getElementsByClassName("jsColor");
 
@@ -51,6 +52,8 @@ const onMouseMove = (event) => {
 const handleCanvasClick = () => {
   if (isFilling) {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    isFilling = false;
+    modeBtn.innerText = "Fill";
   }
 };
 
@@ -75,11 +78,16 @@ const handleBrushSizeChange = (event) => {
 const handleModeClick = () => {
   if (isFilling) {
     isFilling = false;
-    mode.innerText = "FILL";
+    modeBtn.innerText = "FILL";
   } else {
     isFilling = true;
-    mode.innerText = "Paint";
+    modeBtn.innerText = "Paint";
   }
+};
+
+const handleInitializeClick = () => {
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 };
 
 const handleSaveClick = () => {
@@ -108,10 +116,14 @@ if (brushSizeInput) {
   brushSizeInput.addEventListener("input", handleBrushSizeChange);
 }
 
-if (mode) {
-  mode.addEventListener("click", handleModeClick);
+if (modeBtn) {
+  modeBtn.addEventListener("click", handleModeClick);
 }
 
-if (save) {
-  save.addEventListener("click", handleSaveClick);
+if (initializeBtn) {
+  initializeBtn.addEventListener("click", handleInitializeClick);
+}
+
+if (saveBtn) {
+  saveBtn.addEventListener("click", handleSaveClick);
 }
